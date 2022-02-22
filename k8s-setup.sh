@@ -1,6 +1,6 @@
 #!/bin/bash
 export k8sversion=1.21.9-00
-
+export pathdevmap=/dev/mapper/ubuntu--vg-ubuntu--lv
 
 
 sudo swapoff -a
@@ -29,3 +29,5 @@ sudo apt-get update
 sudo apt-get install -y kubeadm=$k8sversion kubelet=$k8sversion kubectl=$k8sversion
 sudo apt-mark hold kubelet kubeadm kubectl
 sudo apt install nfs-client -y
+sudo lvextend -l +100%FREE $pathdevmap
+sudo resize2fs $pathdevmap
