@@ -1,21 +1,16 @@
 #!/bin/bash
-export k8sfolder=~/k8sinstall
-export k8sversion=1.21.9
-export cpe=k8smaster
-export podnet=172.25.0.0/16
-
-mkdir $k8sfolder
-touch $k8sfolder/kubeadm-config.yaml
+mkdir $kubeadmfolder
+touch $kubeadmfolder/kubeadm-config.yaml
 printf \
 'apiVersion: kubeadm.k8s.io/v1beta2
 kind: ClusterConfiguration
-kubernetesVersion: '$k8sversion'
-controlPlaneEndpoint: "'$cpe':6443"
+kubernetesVersion: $k8sversionshort
+controlPlaneEndpoint: "$k8smaster:6443"
 networking:
-  podSubnet: '$podnet'' \
-| sudo tee -a $k8sfolder/kubeadm-config.yaml
+  podSubnet: $podnet' \
+| tee -a $kubeadmfolder/kubeadm-config.yaml
 
-sudo kubeadm init --config=$k8sfolder/kubeadm-config.yaml --upload-certs | sudo tee $k8sfolder/kubeadm-init.out
+sudo kubeadm init --config=$kubeadmfolder/kubeadm-config.yaml --upload-certs | tee $kubeadmfolder/kubeadm-init.out
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
