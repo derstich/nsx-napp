@@ -28,3 +28,4 @@ sudo echo 'deb http://apt.kubernetes.io/  kubernetes-xenial  main' | sudo tee -a
 sudo apt-get update
 sudo apt-get install -y kubeadm=$k8sversion kubelet=$k8sversion kubectl=$k8sversion
 sudo apt-mark hold kubelet kubeadm kubectl
+sudo apt install nfs-client -y
