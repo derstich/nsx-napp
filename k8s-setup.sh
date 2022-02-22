@@ -1,8 +1,4 @@
 #!/bin/bash
-export k8sversion=1.21.9-00
-export pathdevmap=/dev/mapper/ubuntu--vg-ubuntu--lv
-
-
 sudo swapoff -a
 sudo sed -i -e 's\/swap.img\#/swap.img\g' /etc/fstab
 sudo apt-get update
