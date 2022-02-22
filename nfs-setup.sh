@@ -1,11 +1,4 @@
 #!/bin/bash
-
-#Set variables
-export sdx=sdx
-export nfsfolder=nfsfolder
-export nfssubfolder=nfssubfolder
-
-#run commands
 sudo apt install nfs-kernel-server nfs-common -y
 echo -e 'n\np\n1\n\n\nw' | sudo fdisk /dev/$sdx
 sudo mkfs.ext4 /dev/$sdx1
