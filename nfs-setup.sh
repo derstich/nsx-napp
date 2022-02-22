@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #Set variables
-sdx=sdb
-nfsfolder=nfs
-nfssubfolder=k8s
+export sdx=sdx
+export nfsfolder=nfsfolder
+export nfssubfolder=nfssubfolder
 
 #run commands
 sudo apt install nfs-kernel-server nfs-common -y
