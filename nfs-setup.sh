@@ -7,7 +7,7 @@ nfssubfolder=k8s
 
 #run commands
 sudo apt install nfs-kernel-server nfs-common -y
-echo -e 'n\np\n1\n\n\nw'| sudo fdisk /dev/$sdx
+echo -e 'n\np\n1\n\n\nw' | sudo fdisk /dev/$sdx
 sudo mkfs.ext4 /dev/$sdx'1'
 sudo mkdir /$nfsfolder
 sudo mount /dev/$sdx'1' /$nfsfolder
