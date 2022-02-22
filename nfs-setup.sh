@@ -3,7 +3,7 @@
 #Set variables
 sdx=sdb
 nfsfolder=nfs
-nfs-subfolder=k8s
+nfssubfolder=k8s
 
 #run commands
 sudo apt install nfs-kernel-server nfs-common -y
