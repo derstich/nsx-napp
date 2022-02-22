@@ -16,3 +16,9 @@ networking:
 | sudo tee -a $k8sfolder/kubeadm-config.yaml
 
 sudo kubeadm init --config=$k8sfolder/kubeadm-config.yaml --upload-certs | sudo tee $k8sfolder/kubeadm-init.out
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+source /usr/share/bash-completion/bash_completion
+echo 'source <(kubectl completion bash)' >>~/.bashrc
