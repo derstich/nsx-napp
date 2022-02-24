@@ -5,7 +5,7 @@
 export user=acme
 
 #Place for the Installation Scripts (can be deleted after the installation)
-export installfiles=/home/$user/nappinstall
+export installfiles=nappinstall
 
 #Hostnames (Server FQDN)
 export k8sm=k8smaster.corp.local
