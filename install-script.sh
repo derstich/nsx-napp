@@ -1,10 +1,11 @@
 #!/bin/bash
 
 #set Variables
-export installfiles=~/nappinstall
-
 #Username (loginname for the servers K8S+NFS)
 export user=acme
+
+#Place for the Installation Scripts (can be deleted after the installation)
+export installfiles=/home/$user/nappinstall
 
 #Hostnames (Server FQDN)
 export k8sm=k8smaster.corp.local
