@@ -28,4 +28,4 @@ kubectl apply -f $k8sconfigfiles/metallb-configmap.yaml
 #Install NFS Provisioner
 sudo snap install helm --classic
 helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner
-helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=nfs-k8s.corp.local --set nfs.path=/nfs/k8s --set storageClass.onDelete=true
+helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=$nfs --set nfs.path=/$nfsfolder/$nfssubfolder --set storageClass.onDelete=true
