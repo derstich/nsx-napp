@@ -63,7 +63,7 @@ sed -i -e 's\$nfsfolder\'$nfsfolder'\g' $installfiles/nfs-setup.sh
 sed -i -e 's\$nfssubfolder\'$nfssubfolder'\g' $installfiles/nfs-setup.sh
 
 #uplod script to NFS Server
-scp $installfiles/nfs-setup.sh nfs:$installfiles/
+scp $installfiles/nfs-setup.sh $nfs:$installfiles/
 #execute the Script on NFS Server
 ssh $nfs bash $installfiles/nfs-setup.sh
 
