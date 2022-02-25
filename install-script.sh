@@ -21,9 +21,9 @@ export nfssubfolder=k8s
 
 #K8S Information
 export k8sversion=1.21.9-00
+export podnet=172.25.0.0/16
 export pathdevmap=/dev/mapper/ubuntu--vg-ubuntu--lv
 export kubeadmfolder=~/kubeadm
-export podnet=172.25.0.0/16
 export k8sconfigfiles=~/k8sconfigfiles
 
 #LB IP Pool
