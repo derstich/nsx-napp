@@ -1,4 +1,7 @@
 #!/bin/bash
+
+#The Script will install Kubectl on the Management Server and download the .kube/config from Kubernetes Master
+
 sudo apt-get update
 sudo apt-get upgrade -y
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
