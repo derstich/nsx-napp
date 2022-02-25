@@ -7,9 +7,7 @@ export installfiles=~/nappinstall
 
 #Hostnames (Server FQDN)
 export k8sm=k8smaster.corp.local
-export k8sn1=k8snode.corp.local
-export k8sn2=
-export k8sn3=
+export k8sn=k8snode.corp.local
 export nfs=nfs-k8s.corp.local
 
 #NFS Information
@@ -40,7 +38,6 @@ export helmrepo='https://projects.registry.vmware.com/chartrepo/nsx_application_
 #------------------------------------------
 
 #Create Server Groups
-export k8sn="$k8sn1 $k8sn2 $k8sn3"
 export k8shost="$k8sm $k8sn"
 export allhost="$k8sm $k8sn $nfs"
 
