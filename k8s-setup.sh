@@ -8,7 +8,7 @@ sudo sed -i -e 's\/swap.img\#/swap.img\g' /etc/fstab
 sudo apt-get update
 sudo apt-get upgrade -y
 
-#Install Docker and chane the croupdrive to systemd
+#Install Docker and change the croupdriver to systemd
 sudo apt-get install -y docker.io
 sudo systemctl enable docker.service
 sudo systemctl start docker
