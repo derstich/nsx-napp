@@ -11,9 +11,6 @@ export k8sn1=k8snode.corp.local
 export k8sn2=
 export k8sn3=
 export nfs=nfs-k8s.corp.local
-export k8sn="$k8sn1 $k8sn2 $k8sn3"
-export k8shost="$k8sm $k8sn"
-export allhost="$k8sm $k8sn $nfs"
 
 #NFS Information
 #Disk to use
