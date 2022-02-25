@@ -1,10 +1,9 @@
 #!/bin/bash
-export iprange=192.168.110.81-192.168.110.90
 
-
-#Install CNI
+#Install Antrea CNI
 curl -o $k8sconfigfiles/antrea.yaml https://raw.githubusercontent.com/antrea-io/antrea/main/build/yamls/antrea.yml
 kubectl apply -f $k8sconfigfiles/antrea.yaml
+
 #Install LoadBalancer MetalB
 kubectl create ns metallb-system
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/main/manifests/metallb.yaml -n metallb-system
@@ -25,6 +24,7 @@ data:
       - $ippool' \
 | tee -a $k8sconfigfiles/metallb-configmap.yaml
 kubectl apply -f $k8sconfigfiles/metallb-configmap.yaml
+
 #Install NFS Provisioner
 sudo snap install helm --classic
 helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner
