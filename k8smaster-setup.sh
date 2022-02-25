@@ -1,4 +1,7 @@
 #!/bin/bash
+
+#The Script create a Kubeadm Config, install Kubernetes and store the results in the File kubeadm-init.out
+
 mkdir $kubeadmfolder
 touch $kubeadmfolder/kubeadm-config.yaml
 printf \
