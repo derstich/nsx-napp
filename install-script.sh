@@ -94,9 +94,7 @@ ssh $k8sm bash $installfiles/k8smaster-setup.sh
 
 #Download the Kubeadm Init from K8S and execute on Worker Nodes
 ssh $k8sm tail -n 2 $kubeadmfolder/kubeadm-init.out >> $installfiles/kubeadm-node.sh
-for k8snodes in $k8sn; do
-cat $installfiles/kubeadm-node.sh | ssh $k8snodes sudo -i
-done
+cat $installfiles/kubeadm-node.sh | ssh $k8sn sudo -i
 
 # Install Kubectl on Management Host
 curl -o $installfiles/cli-setup.sh https://raw.githubusercontent.com/derstich/nsx-napp/main/cli-setup.sh
