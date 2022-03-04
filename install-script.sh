@@ -109,6 +109,11 @@ sed -i -e 's\$k8sconfigfiles\'$k8sconfigfiles'\g' $installfiles/k8sprep.sh
 sed -i -e 's\$ippool\'$ippool'\g' $installfiles/k8sprep.sh
 bash $installfiles/k8sprep.sh
 
+#Download Images upfront to worker node
+curl -o $installfiles/imagepull.sh https://raw.githubusercontent.com/derstich/nsx-napp/main/imagepull.sh
+scp $installfiles/imagepull.sh $k8sn:$installfiles/
+ssh $k8sn bash $installfiles/imagepull.sh
+
 #Optional upload kube/config to nsx manager (needed later for NAPP Installation)
 curl -k -u ''$nsxuser':'$nsxpasswd'' -X PUT -H "Content-Type: application/json" -d '{"docker_registry":"'$dockerregistry'","helm_repo":"'$helmrepo'"}' https://$nsxmanager/policy/api/v1/infra/sites/default/napp/deployment/registry
 curl -k -u ''$nsxuser':'$nsxpasswd'' -H 'Accept:application/json' -F 'file=@./.kube/config' https://$nsxmanager/policy/api/v1/infra/sites/default/napp/deployment/kubeconfig
