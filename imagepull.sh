@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#Project Antrea
+sudo docker pull docker pull projects.registry.vmware.com/antrea/antrea-ubuntu:latest
+
+#Metallb
+sudo docker pull quay.io/metallb/controller:main
+sudo docker pull quay.io/metallb/speaker:main
+
 #CertManager Files
 sudo docker pull projects.registry.vmware.com/nsx_application_platform/clustering/third-party/cert-manager-controller:19067763
 sudo docker pull projects.registry.vmware.com/nsx_application_platform/clustering/third-party/cert-manager-cainjector:19067763
