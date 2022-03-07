@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Project Antrea
-sudo docker pull docker pull projects.registry.vmware.com/antrea/antrea-ubuntu:latest
+sudo docker pull projects.registry.vmware.com/antrea/antrea-ubuntu:latest
 
 #Metallb
 sudo docker pull quay.io/metallb/controller:main
