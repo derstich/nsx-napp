@@ -6,7 +6,7 @@ kubectl apply -f $k8sconfigfiles/antrea.yaml
 
 #Install LoadBalancer MetalB
 kubectl create ns metallb-system
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/main/manifests/metallb.yaml -n metallb-system
+kubectl apply -f  https://raw.githubusercontent.com/danpaul81/napp_vapp/main/files/nappinstall/metallb.yaml
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 touch $k8sconfigfiles/metallb-configmap.yaml
 printf \
